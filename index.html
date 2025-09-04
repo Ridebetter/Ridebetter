@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RideBetter – Motorcycle Training Platform</title>
+    <!-- Google fonts for modern typography -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header navigation bar -->
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">RideBetter</div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#guides">Guides</a></li>
+            <li><a href="#help">Help</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a class="btn btn-signup" href="#signup">Sign Up</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero section with background image and search -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <h1>UK’s #1 platform for motorcycle training</h1>
+        <p>
+          Get on the road with trusted motorcycle courses and instructors. Begin
+          your journey to two‑wheeled freedom today.
+        </p>
+        <form class="search-form" onsubmit="event.preventDefault()">
+          <input
+            type="text"
+            placeholder="Enter your postcode or city"
+            aria-label="Search for training locations"
+            required
+          />
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <button class="btn btn-secondary">Get Started</button>
+      </div>
+    </section>
+
+    <!-- Results section displayed after a search -->
+    <section class="search-results">
+      <div id="search-results" class="container"></div>
+    </section>
+
+    <!-- How it works / features section -->
+    <section class="features">
+      <div class="container features-grid">
+        <div class="feature">
+          <!-- Book icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M6 2h11a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v15h11V4H6zm2 3h7v1H8V7zm0 3h7v1H8v-1zm0 3h7v1H8v-1z"
+            />
+          </svg>
+          <h3>Find a Course</h3>
+          <p>
+            Explore a range of motorcycle courses to match your experience and
+            goals. Choose from beginner to advanced training.
+          </p>
+        </div>
+        <div class="feature">
+          <!-- Location pin icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 2C8.134 2 5 5.134 5 9c0 4.338 4.145 8.468 6.471 11.109a1 1 0 0 0 1.058.291 1 1 0 0 0 .472-.291C14.855 17.468 19 13.338 19 9c0-3.866-3.134-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"
+            />
+          </svg>
+          <h3>Choose a Location</h3>
+          <p>
+            Search by postcode or city to find qualified motorcycle schools near
+            you, reviewed and rated by riders.
+          </p>
+        </div>
+        <div class="feature">
+          <!-- Check mark icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M20 6L9 17l-5-5 1.414-1.414L9 14.172 18.586 4.586 20 6z" />
+          </svg>
+          <h3>Book in a Click</h3>
+          <p>
+            Reserve your spot online with our secure, simple booking process and
+            flexible cancellation options.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics section -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <h2>40+</h2>
+          <p>Cities served across the UK</p>
+        </div>
+        <div class="stat">
+          <h2>250k+</h2>
+          <p>Hours of training booked</p>
+        </div>
+        <div class="stat">
+          <h2>14.5k+</h2>
+          <p>Available lessons each month</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action / quiz section -->
+    <section id="cta-section" class="cta">
+      <div class="container cta-content">
+        <h2>Not sure where to start?</h2>
+        <p>
+          Getting on two wheels doesn’t have to be complicated. Take our short
+          quiz to get a personalised guide and kick‑start your riding adventure.
+        </p>
+        <!-- Add an ID to the button so it can be targeted by JavaScript -->
+        <button id="start-quiz" class="btn btn-primary">Start Quiz</button>
+      </div>
+    </section>
+
+    <!-- Quiz section (hidden by default) -->
+    <section id="quiz-section" class="quiz hidden">
+      <div class="container" id="quiz-container"></div>
+    </section>
+
+    <!-- Help section -->
+    <section id="help" class="help">
+      <div class="container">
+        <h2>Help Centre</h2>
+        <div class="help-item">
+          <h3>Preparing for your CBT</h3>
+          <p>
+            Bring your valid UK provisional or full driving licence. EU licence
+            holders must bring their licence photocard along with a returned
+            D9 form. If you're using your own motorcycle, ensure it has
+            insurance, an MOT, valid road tax and L‑plates. Plan your journey
+            in advance, check your training location, date and time, and
+            arrive early — missing the start of training means you may not
+            be allowed to participate.
+          </p>
+        </div>
+        <div class="help-item">
+          <h3>What to wear</h3>
+          <p>
+            Wear protective clothing: a thick jacket and trousers such as
+            leather or heavy denim with no rips. Sturdy boots that cover
+            your ankles are mandatory. Dress for the weather — lighter
+            layers in summer and warm, waterproof layers in winter. Most
+            schools provide helmets, high‑visibility vests and gloves, but
+            check your booking confirmation as availability varies.
+          </p>
+        </div>
+        <div class="help-item">
+          <h3>Course structure</h3>
+          <p>
+            CBT courses cover five elements: an introduction and eye test, on‑site
+            training covering vehicle controls and basic maintenance checks,
+            on‑site riding to practise manoeuvres and gear changes, an on‑road
+            theory session focusing on safe and legal road riding, and an
+            on‑road ride of at least two hours.
+          </p>
+        </div>
+        <div class="help-item">
+          <h3>Tips for the day</h3>
+          <p>
+            The CBT typically lasts six to eight hours, so it can be tiring.
+            Get a good night’s sleep and eat a proper breakfast beforehand.
+            It’s normal to be asked to return for a second day if your instructor
+            feels you need more practice — this helps ensure you’re confident
+            and safe on the road.
+          </p>
+        </div>
+        <div class="help-item">
+          <h3>Manual vs. automatic bikes</h3>
+          <p>
+            Manual motorcycles give you full control over gear changes and
+            provide an engaging ride with efficient acceleration; they’re also
+            generally cheaper to buy and maintain. However, learning to use the
+            clutch and gears takes practice and can be tiring in stop‑and‑go
+            traffic. Automatic motorcycles are easier to ride, particularly
+            for commuting and beginners, and eliminate the risk of stalling.
+            They do tend to cost more, weigh more and there are fewer models
+            available. Choose the type that best matches your riding style
+            and future plans.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer section -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#terms">Terms</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="#course-cbt">CBT Training</a></li>
+            <li><a href="#course-intro">Intro to Riding</a></li>
+            <li><a href="#course-licence">Full Licence</a></li>
+            <li><a href="#course-gear">Gear Conversion</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#help">Help Centre</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#club">Rider’s Club</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Stay Updated</h4>
+          <p>Get the latest news on rides, events and offers.</p>
+          <form class="newsletter" onsubmit="event.preventDefault()">
+            <input
+              type="email"
+              placeholder="Email address"
+              aria-label="Subscribe to newsletter"
+              required
+            />
+            <button type="submit" class="btn btn-secondary">Subscribe</button>
+          </form>
+          <div class="socials">
+            <a href="#" aria-label="Facebook">
+              <!-- simple facebook icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M22.675 0h-21.35C.595 0 0 .595 0 1.326v21.348C0 23.405.595 24 1.326 24H12.82v-9.294H9.692V11.08h3.128V8.414c0-3.097 1.893-4.787 4.66-4.787 1.325 0 2.463.099 2.794.143v3.24l-1.917.001c-1.504 0-1.796.715-1.796 1.764v2.312h3.59l-.468 3.626h-3.122V24h6.116C23.406 24 24 23.405 24 22.674V1.326C24 .595 23.406 0 22.675 0z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.2 0 3.584.012 4.849.07 1.259.058 2.123.256 2.633.438.609.21 1.043.462 1.502.921.459.459.711.893.921 1.502.182.51.38 1.374.438 2.633.058 1.265.07 1.649.07 4.849s-.012 3.584-.07 4.849c-.058 1.259-.256 2.123-.438 2.633-.21.609-.462 1.043-.921 1.502-.459.459-.893.711-1.502.921-.51.182-1.374.38-2.633.438-1.265.058-1.649.07-4.849.07s-3.584-.012-4.849-.07c-1.259-.058-2.123-.256-2.633-.438-.609-.21-1.043-.462-1.502-.921-.459-.459-.711-.893-.921-1.502-.182-.51-.38-1.374-.438-2.633C2.175 15.747 2.163 15.363 2.163 12s.012-3.584.07-4.849c.058-1.259.256-2.123.438-2.633.21-.609.462-1.043.921-1.502.459-.459.893-.711 1.502-.921.51-.182 1.374-.38 2.633-.438C8.416 2.175 8.8 2.163 12 2.163zm0-2.163C8.741 0 8.333.012 7.052.07 5.771.129 4.834.316 4.05.611c-.892.334-1.65.78-2.407 1.538C1.385 2.906.939 3.664.605 4.556.31 5.34.123 6.278.064 7.559.006 8.84-.006 9.248-.006 12c0 2.752.012 3.16.07 4.441.059 1.281.246 2.219.541 3.003.334.892.78 1.65 1.538 2.407.757.757 1.515 1.203 2.407 1.538.784.295 1.722.482 3.003.541 1.281.058 1.689.07 4.441.07s3.16-.012 4.441-.07c1.281-.059 2.219-.246 3.003-.541.892-.334 1.65-.78 2.407-1.538.757-.757 1.203-1.515 1.538-2.407.295-.784.482-1.722.541-3.003.058-1.281.07-1.689.07-4.441s-.012-3.16-.07-4.441c-.059-1.281-.246-2.219-.541-3.003-.334-.892-.78-1.65-1.538-2.407-.757-.757-1.515-1.203-2.407-1.538-.784-.295-1.722-.482-3.003-.541C15.247.012 14.839 0 12 0z"
+                />
+                <path
+                  d="M12 5.838A6.162 6.162 0 0 0 5.838 12 6.162 6.162 0 0 0 12 18.162 6.162 6.162 0 0 0 18.162 12 6.162 6.162 0 0 0 12 5.838zm0 10.162A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"
+                />
+                <circle cx="18.406" cy="5.594" r="1.44" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M23.954 4.569a10 10 0 0 1-2.825.775 4.932 4.932 0 0 0 2.163-2.724 9.864 9.864 0 0 1-3.127 1.195 4.92 4.92 0 0 0-8.38 4.483A13.934 13.934 0 0 1 1.671 3.149 4.822 4.822 0 0 0 3.195 9.86a4.903 4.903 0 0 1-2.229-.616v.06a4.924 4.924 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.224.084 4.936 4.936 0 0 0 4.604 3.417A9.868 9.868 0 0 1 .96 19.54a13.93 13.93 0 0 0 7.548 2.209c9.051 0 14.001-7.496 14.001-13.986 0-.21-.005-.423-.015-.634a9.935 9.935 0 0 0 2.46-2.548l-.001-.002z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© RideBetter 2025. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- JavaScript to handle search functionality -->
+    <script src="script.js"></script>
+  </body>
+</html>
